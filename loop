@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Continuously run command unless it terminated improperly
+
+while true; do
+	$@
+	if [ $? -ne 0 ]; then
+		exit
+	fi
+done
